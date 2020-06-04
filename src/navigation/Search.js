@@ -21,7 +21,7 @@ export default class Search extends Component {
         return (
             <div className="search">
                 <div className="search__icon-block">
-                    <img alt="search"/>
+                    <img src={require('./assets/search.svg')} alt="search"/>
                 </div>
                 <input onChange={this.handleChange} />
             </div>
