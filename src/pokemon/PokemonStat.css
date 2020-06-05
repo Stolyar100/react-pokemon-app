@@ -14,13 +14,14 @@
     margin-top: 0;
     margin-bottom: 0;
     line-height: 33px;
+    min-width: 110px;
 }
 
 .pokemon__stat-block {
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width: 760px;
+    max-width: 535px;
     width: 100%;
 }
 
