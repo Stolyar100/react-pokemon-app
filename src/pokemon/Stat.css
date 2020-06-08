@@ -1,4 +1,4 @@
-.pokemon__stat {
+.stat {
     max-width: 950px;
     width: 100%;
     display: flex;
@@ -8,7 +8,7 @@
     color: #E9E9E9;
 }
 
-.pokemon__stat-name {
+.stat__name {
     font-size: 24px;
     font-weight: 300;
     margin-top: 0;
@@ -17,7 +17,7 @@
     min-width: 110px;
 }
 
-.pokemon__stat-block {
+.stat__block {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -25,13 +25,13 @@
     width: 100%;
 }
 
-.pokemon__stat-left {
+.stat__left {
     background: linear-gradient(94.93deg, #0084CE 0%, #46BBFD 100%);
     padding: 2px 16px;
     margin-right: 5px;
 }
 
-.pokemon__stat-right {
+.stat__right {
     border: 1px solid #E9E9E9;
     height: 25px;
 }

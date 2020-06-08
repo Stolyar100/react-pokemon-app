@@ -1,0 +1,25 @@
+.mini-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 220px;
+    width: 100%;
+    padding-bottom: 20px;
+    background: #242424;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.mini-card__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.mini-card__name {
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 400;
+}

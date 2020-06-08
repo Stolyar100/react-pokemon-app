@@ -1,13 +1,13 @@
 import React from 'react';
-import './PokemonStat.css';
+import './Stat.css';
 
-export default function PokemonStat({ name, value }) {
+export default function Stat({ name, value }) {
     return (
-        <div className="pokemon__stat">
-            <h3 className="pokemon__stat-name">{name}</h3>
-            <div className="pokemon__stat-block">
+        <div className="stat">
+            <h3 className="stat__name">{name}</h3>
+            <div className="stat__block">
                 <div
-                    className="pokemon__stat-left"
+                    className="stat__left"
                     style={{
                         width: `${value}%`,
                     }}
@@ -15,7 +15,7 @@ export default function PokemonStat({ name, value }) {
                     {value}
                 </div>
                 <div
-                    className="pokemon__stat-right"
+                    className="stat__right"
                     style={{
                         width: `${100 - value}%`,
                     }}
