@@ -1,0 +1,57 @@
+.card {
+    color: #E9E9E9;
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 104px;
+    padding-bottom: 195px;
+}
+
+.card__info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 70px;
+}
+
+.card__left-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: #E9E9E9;
+    padding-right: 80px;
+}
+
+.card__image {
+    width: 160px;
+}
+
+.card__name {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.card__stats-block {
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card__description {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.stat__block {
+    margin-bottom: 30px;
+}
