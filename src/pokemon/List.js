@@ -1,9 +1,25 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import {pokemonListURL} from '../API/requestUrl';
+import {AsyncGetPokemonList} from '../actions/requests'
 import MiniCard from './MiniCard';
 import './List.css';
 
 
-export default class List extends Component {
+
+class List extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            
+        }
+    }
+    
+    componentDidMount() {
+        AsyncGetPokemonList(pokemonListURL);
+    }
+
     render() {
         return (
             <div className="list">
@@ -43,3 +59,13 @@ export default class List extends Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        list: state.list,
+        nextPage: state.nextPage,
+        previousPage: state.previousPage
+    }
+}
+
+export default connect(mapStateToProps)(List)
