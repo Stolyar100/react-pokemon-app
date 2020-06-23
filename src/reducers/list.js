@@ -1,12 +1,12 @@
-import {GET_POKEMON_LIST} from '../actions/types';
+import {GET_POKEMON_LIST, GET_POKEMON_INFO} from '../actions/types';
 
 const initialState = {
-    next: '',
-    previous: '',
+    nextPage: '',
+    previousPage: '',
     list: [],
 }
 
-export default function listReducer(state = initialState, {nextPage, previousPage, list, type}) {
+export default function listReducer(state = initialState, {type, nextPage, previousPage, list, id, image, stats}) {
     switch (type) {
         case GET_POKEMON_LIST:
             return Object.assign({}, state,
@@ -16,6 +16,13 @@ export default function listReducer(state = initialState, {nextPage, previousPag
                     list,
                 }
             );
+        case GET_POKEMON_INFO:
+            return Object.assign({}, state, 
+                Object.assign({}, state.list[id], 
+                    {
+                        image, 
+                        stats,
+                    }))
 
         default: 
             return state;
