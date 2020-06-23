@@ -24,36 +24,9 @@ class List extends Component {
         return (
             <div className="list">
                 <div className="list__list">
-                    <div className="list__list-row">
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                    </div>
-                    <div className="list__list-row">
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                    </div>
-                    <div className="list__list-row">
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                    </div>
-                    <div className="list__list-row">
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                    </div>
-                    <div className="list__list-row">
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                        <MiniCard />
-                    </div>
+                {this.props.list.map((pokemon, id) => (
+                        <MiniCard name={pokemon.name} url={pokemon.url} id={id}/>
+                    ))}
                 </div>
             </div>
         )
@@ -62,9 +35,9 @@ class List extends Component {
 
 const mapStateToProps = state => {
     return {
-        list: state.list,
-        nextPage: state.nextPage,
-        previousPage: state.previousPage
+        list: state.listReducer.list,
+        nextPage: state.listReducer.nextPage,
+        previousPage: state.listReducer.previousPage
     }
 }
 
