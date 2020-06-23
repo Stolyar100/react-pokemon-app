@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import './MiniCard.css';
+import '../actions/requests'
 
-export default function MiniCard({name = 'wartotle', image = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png'}) {
+export default function MiniCard({name = 'loading', image = '', url, id}) {
+    if (image === '') {
+        
+    }
     return (
         <div className="mini-card">
             <div className="mini-card__image-block">
