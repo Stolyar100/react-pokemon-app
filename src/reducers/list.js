@@ -17,12 +17,20 @@ export default function listReducer(state = initialState, {type, nextPage, previ
                 }
             );
         case GET_POKEMON_INFO:
-            return Object.assign({}, state, 
-                Object.assign({}, state.list[id], 
-                    {
-                        image, 
-                        stats,
-                    }))
+            return Object.assign({}, state, {
+                    list: state.list.map((pokemon, index) => {
+                        if (index === id) {
+                            return {
+                                ...pokemon,
+                                image, 
+                                stats
+                            }
+                        } else {
+                            return pokemon;
+                        }
+                    }) 
+            }
+            );
 
         default: 
             return state;
