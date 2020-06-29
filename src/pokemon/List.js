@@ -23,7 +23,7 @@ class List extends Component {
             <div className="list">
                 <div className="list__list">
                 {this.props.list.map((pokemon, id) => (
-                        <MiniCard name={pokemon.name} url={pokemon.url} id={id}/>
+                        <MiniCard name={pokemon.name} url={pokemon.url} image={pokemon.image} id={id}/>
                     ))}
                 </div>
             </div>
