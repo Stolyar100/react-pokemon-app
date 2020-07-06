@@ -22,11 +22,13 @@ class List extends Component {
     render() {
         return (
             <div className="list">
-                {this.props.list.map((pokemon, id) => (
-                        <Link to={`/pokemon/${pokemon.name}`}>
+                {
+                    this.props.list.map((pokemon, id) => (
+                        <Link to={`/pokemon/${id}`} key={pokemon.name}>
                             <MiniCard name={pokemon.name} url={pokemon.url} image={pokemon.image} id={id}/>
                         </Link>
-                    ))}
+                    ))
+                }
             </div>
         )
     }
