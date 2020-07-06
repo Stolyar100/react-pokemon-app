@@ -3,10 +3,6 @@ import './MiniCard.css';
 import {AsyncGetPokemonInfo} from '../actions/requests';
 
 export default class MiniCard extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         AsyncGetPokemonInfo(this.props.id, this.props.url);
     }
