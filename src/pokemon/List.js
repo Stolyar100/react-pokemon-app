@@ -4,6 +4,7 @@ import {pokemonListURL} from '../API/requestUrl';
 import {AsyncGetPokemonList} from '../actions/requests'
 import MiniCard from './MiniCard';
 import './List.css';
+import { Link } from 'react-router-dom';
 
 class List extends Component {
     constructor(props) {
@@ -21,9 +22,13 @@ class List extends Component {
     render() {
         return (
             <div className="list">
-                {this.props.list.map((pokemon, id) => (
-                        <MiniCard name={pokemon.name} url={pokemon.url} image={pokemon.image} id={id}/>
-                    ))}
+                {
+                    this.props.list.map((pokemon, id) => (
+                        <Link to={`/pokemon/${id}`} key={pokemon.name}>
+                            <MiniCard name={pokemon.name} url={pokemon.url} image={pokemon.image} id={id}/>
+                        </Link>
+                    ))
+                }
             </div>
         )
     }

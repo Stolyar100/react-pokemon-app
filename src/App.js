@@ -13,12 +13,8 @@ function App() {
         <Layout>
           <Search />
           <Switch>
-            <Route exact path="/">
-              <List />
-            </Route>
-            <Route path="/pokemon">
-              <Card />
-            </Route>
+            <Route exact path="/" component={List}/>
+            <Route path="/pokemon/:id" component={Card}/>
           </Switch>
         </Layout>
       </BrowserRouter>

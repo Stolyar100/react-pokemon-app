@@ -1,43 +1,44 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Stat from './Stat'
+import {AsyncGetPokemonDescription} from '../actions/requests'
 import './Card.css'
 
-export default class Card extends Component {
-    state = {
-    name: 'wartotle',
-    hp: 59,
-    attack: 63,
-    defence: 80,
-    speed: 58,
-    spAttack: 65,
-    spDefence: 80,
-    description: 'Its tail is large and covered with a rich, thick fur. The tail\nbecomes increasingly deeper in color as Wartortle ages.\nThe scratches on its shell are evidence of this Pokémon’s\ntoughness as a battler.',
-    type: 'water',
-    themeColor: '3295F6',
-    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png',
+class Card extends Component {
+    componentDidMount() {
+        AsyncGetPokemonDescription(this.props.id, this.props.pokemon.name);
     }
     
     render() {
+        const {image, name, stats, description} = this.props.pokemon;
         return (
             <div className="card">
                 <div className="card__info">
                     <div className="card__left-block">
                         <div className="card__image-block">
-                            <img src={this.state.image} className="card__image" alt="pokemon" />
+                            <img src={image} className="card__image" alt="pokemon" />
                         </div>
-                        <h2 className="card__name">{this.state.name}</h2>
+                        <h2 className="card__name">{name}</h2>
                     </div>
                     <div className="card__stats-block">
-                        <Stat name="HP" value={this.state.hp}/>
-                        <Stat name="Attack" value={this.state.attack}/>
-                        <Stat name="Defence" value={this.state.defence}/>
-                        <Stat name="Speed" value={this.state.speed}/>
-                        <Stat name="Sp Attack" value={this.state.spAttack}/>
-                        <Stat name="Sp Def" value={this.state.spDefence}/>
+                        <Stat name="HP" value={stats[0].base_stat}/>
+                        <Stat name="Attack" value={stats[1].base_stat}/>
+                        <Stat name="Defence" value={stats[2].base_stat}/>
+                        <Stat name="Speed" value={stats[5].base_stat}/>
+                        <Stat name="Sp Attack" value={stats[3].base_stat}/>
+                        <Stat name="Sp Def" value={stats[4].base_stat}/>
                     </div>
                 </div>
-                <p className="card__description">{this.state.description}</p>
+                <p className="card__description">{description}</p>
             </div>
         )
     }
 }
+const mapStateToProps = (state, ownProps) => {
+    const { match: {params: {id}}} = ownProps; 
+    return {
+        pokemon: state.listReducer.list[id],
+        id
+    }
+}
+export default connect(mapStateToProps)(Card);
