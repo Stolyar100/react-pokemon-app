@@ -1,16 +1,10 @@
 {
-    "env": {
-        "browser": true,
-        "es2020": true
-    },
-    "extends": [
-        "airbnb",
-        "prettier"
-    ],
-    "plugins": [
-        "react",
-        "prettier"
-    ],
-    "rules": {
-    }
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react", "prettier"],
+  "rules": {},
+  "parser": "babel-eslint"
 }
