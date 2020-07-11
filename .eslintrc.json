@@ -6,7 +6,8 @@
   "extends": ["airbnb", "prettier"],
   "plugins": ["react", "prettier"],
   "rules": {
-    "react/destructuring-assignment": "off"
+    "react/destructuring-assignment": "off",
+    "global-require": "off"
   }
   // "parser": "babel-eslint"
 }
