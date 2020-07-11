@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Layout from './Layout';
-import Search from './navigation/Search'
-import List from './pokemon/List'
+import Search from './navigation/Search';
+import List from './pokemon/List';
 import Card from './pokemon/Card';
+import './App.css';
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
         <Layout>
           <Search />
           <Switch>
-            <Route exact path="/" component={List}/>
-            <Route path="/pokemon/:id" component={Card}/>
+            <Route exact path="/" component={List} />
+            <Route path="/pokemon/:id" component={Card} />
           </Switch>
         </Layout>
       </BrowserRouter>
